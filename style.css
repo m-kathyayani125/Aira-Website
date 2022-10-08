@@ -52,7 +52,8 @@ button:hover{
     left:0;
 }
 .navbar-light .navbar-nav .nav-link{
-    padding: 0 20px;
+    padding: 0 ;
+    margin:0 15px;
     color:black;
     transition:0.3s ease;
 }
@@ -60,7 +61,7 @@ button:hover{
 .navbar i:hover,
 .navbar-light .navbar-nav .nav-link.active
 .navbar i.active{
-    color:#905E96;
+    color:#ff3c78;
 }
 .navbar i{
     font-size: 1.2rem;
@@ -73,13 +74,31 @@ button:hover{
     border:none;
     outline:none;
 }
-.navbar li a:hover,
-.navbar li a.active{
-    color:#905E96;
-}
-#header{
-    
+
+.navbar{
     box-shadow: 0 5px 15px rgba(0,0,0,0.06) ;
+
+}
+a.nav-link{
+    position:relative;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    
+}
+a.nav-link::after{
+    content:"";
+    position:absolute;
+    background-color: #ff3c78;
+    height:3px;
+    width: 0;
+    left:0;
+    bottom:-10px;
+    transition: 0.3s ease;
+}
+a.nav-link:hover::after
+{
+    width: 100%;
+    
 }
 #home span{
     color:#6F38C5;
@@ -123,6 +142,6 @@ button:hover{
         text-align:right;
     }
     #navbarSupportedContent > ul > li:nth-child(n)>a{
-        padding:10px 0px;
+        padding:0px 10px;
     }
 }
