@@ -9,48 +9,52 @@ body{
 }
 h1{
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 400;
 }
 h2{
     font-size: 1.8rem;
-    font-weight: 600;
+    font-weight: 400;
 }
 h3{
     font-size: 1.4rem;
-    font-weight: 800;
+    /*font-weight: 800;*/
 }
 h4{
     font-size: 1.1rem;
-    font-weight: 600;
+    /*font-weight: 600;*/
 }
 h5{
     font-size: 1rem;
-    font-weight: 400;
+    /*font-weight: 400;*/
     color: #1d1d1d;
 }
 h6{
     color: #d8d8d8;
 }
+/*shop now button in showcase*/
 button{
-    font-size:0.8rem;
-    font-weight:700;
-    outline:none;
-    border:none;
+    font-size:1rem;
+    border-radius:6px;/*curved edges*/
     background-color:#1d1d1d;
-    color:#FFE6F7;
+    color:#fff;
     padding: 13px 30px;
-    cursor:pointer;
+    cursor:pointer;/*cursor changes to hand on hovering*/
     text-transform:uppercase;
-    transition:0.3s ease;
+    transition:0.3s ease;/*hover speed and style*/
+
 }
+/*hover effect to shop now button on showcase*/
 button:hover{
-    background-color: #3a3833;
+    border:none;/*when hovered if color changed then black border is visible so remove it*/
+    background-color:#51557E;
 }
+
 .navbar{
     font-size: 16px;
     top:0;
     left:0;
 }
+/*styling list on navbar*/
 .navbar-light .navbar-nav .nav-link{
     padding: 0 ;
     margin:0 15px;
@@ -63,6 +67,7 @@ button:hover{
 .navbar i.active{
     color:#ff3c78;
 }
+/*styling search and cart icons on navbar*/ 
 .navbar i{
     font-size: 1.2rem;
     padding:0 7px;
@@ -70,78 +75,87 @@ button:hover{
     font-weight: 500;
     transition: 0.3s,ease;
 }
+
+
+/*removing border and outline of hamburger menu icon*/
 .navbar-light .navbar-toggler{
     border:none;
     outline:none;
 }
 
+
+/*to create shadow effect to navbar*/
 .navbar{
     box-shadow: 0 5px 15px rgba(0,0,0,0.06) ;
 
 }
+
+
+/*hovering underline under lists in navbar*/
 a.nav-link{
-    position:relative;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    
+    position:relative;/*to place hovering underline in absolute its position without hover must be relative*/   
 }
 a.nav-link::after{
     content:"";
     position:absolute;
     background-color: #ff3c78;
-    height:3px;
-    width: 0;
-    left:0;
-    bottom:-10px;
-    transition: 0.3s ease;
+    height:3px;/*thickness of line*/
+    width: 0;/*nothing before hovering*/
+    left:0;/*thus element after title will land just paralelly with it*/
+    bottom:-10px;/*after by default makes it to appear on top so bringing it to bottom to make underline*/
+    transition: 0.3s ease;/*create effect one hovering*/
 }
-a.nav-link:hover::after
+a.nav-link:hover::after/*order of hover and after is important syntactically*/
 {
-    width: 100%;
+    width: 100%;/*while hovering width increases*/
     
 }
+
+/*change color of NEW ARRIVALS ON SHOW CASE*/
 #home span{
-    color:#6F38C5;
+    color:#773ed1;
 }
 #home{
     background-image: url("img/back.png");
     width:100%;
     height:100vh;
-    background-size:cover;
-    background-position:top 60px center;
+    background-size:cover;/*to cover the pics and stretch to fill the container*/
+    background-position:top 60px center;/*head of girl gets cut if not positioned like this*/
     display:flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: flex-start;
+    align-items: center;/*align to centre of flex*/
 }
+
+/*customise hamburger menu icon*/
 #bar{
+    border:none;
+    outline:none;
     font-size: 1.5rem;
     padding:7px;
     cursor:pointer;
     font-weight: 500;
-    transition:0.3s ease;
-    color:black;
+    transition:0.3s ease;/*for hoveringeffect*/
+    color:black;/*color of lines in the hamburger menu icon*/
 }
-#bar:hover,
-#bar.active {
-    color: #fff;
-}
+
 @media only screen and (max-width:991px){
+    /*for hover effect of hamburger menu*/
     body > nav > div > button:hover,
     body > nav > div > button:focus{
-        background-color: #A084CF;
+        background-color: #A084CF;/*bg clr as violet on hovering*/
     }
     body > nav > div > button:hover #bar,
     body > nav > div > button:focus #bar{
-        color:#fff;
+        color:#fff;/*lines in icon to be white on hovering*/
     }
+
+    /*styling of navbar list when opened by clicking on hamburger menu..*/
     #navbarSupportedContent>ul{
         margin:1rem;
-        justify-content:flex-end;
-        align-items:flex-end;
-        text-align:right;
+        justify-content:flex-end;/*to make it align towards right horizontally*/
+       align-items:flex-end;/*takes them bottom most of container on vertical axis*/
     }
     #navbarSupportedContent > ul > li:nth-child(n)>a{
-        padding:0px 10px;
+        padding:0px;
+        margin:15px 0px;/*for correct placement of underlines in hovering effect*/
     }
 }
