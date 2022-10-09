@@ -6,6 +6,8 @@
 }
 body{
     font-family: 'Spartan',sans-serif;
+    /*background-color: #FFECEF;*/
+    background-color: #FFF2F2;
 }
 h1{
     font-size: 2.5rem;
@@ -22,6 +24,7 @@ h3{
 h4{
     font-size: 1.1rem;
     /*font-weight: 600;*/
+    
 }
 h5{
     font-size: 1rem;
@@ -34,7 +37,6 @@ h6{
 /*shop now button in showcase*/
 button{
     font-size:1rem;
-    border-radius:6px;/*curved edges*/
     background-color:#1d1d1d;
     color:#fff;
     padding: 13px 30px;
@@ -42,6 +44,24 @@ button{
     text-transform:uppercase;
     transition:0.3s ease;/*hover speed and style*/
 
+}
+hr{
+    width:50px;
+    height:5px;
+    background-color:#088178;
+    
+    /*border-top:5px solid #089f95*/
+}
+.star{
+    padding:10px 0;
+}
+.star i{
+    font-size: 0.8rem;
+    color:goldenrod;
+
+}
+#home button{
+    border-radius:6px;/*curved edges*/
 }
 /*hover effect to shop now button on showcase*/
 button:hover{
@@ -158,4 +178,122 @@ a.nav-link:hover::after/*order of hover and after is important syntactically*/
         padding:0px;
         margin:15px 0px;/*for correct placement of underlines in hovering effect*/
     }
+}
+/*styling new section with slant hover */
+.card{
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.06) ;
+}
+.card:before{
+    position :absolute;
+    content:'';
+    width:80%;
+    height:220%;
+    background: rgba(245,178,178,0.7);
+    top:-50%;
+    left:-100%;
+    z-index:2;
+    transform:rotate(25deg);
+    transform-origin:center top 0;
+    transition:0.5s;
+}
+.card:hover:before{
+    left:10%;
+}
+.card img{
+    width: 100%;
+    height: 350px;;
+    object-fit: fill;
+}
+
+.card-text{
+    width:100%;
+    padding:0 20px;
+    position:absolute;
+    top:-100%;
+    color:black;
+    left:0;
+    z-index:2;
+    transition:0.3s ease;
+}
+.card-text h4{
+    font-weight:400;
+    font-family: Spartan;
+} 
+.card:hover .card-text{
+    top:50px;
+}
+.card-text button{
+    display:inline-block;
+    font-size: 14px;
+    font-weight:500;
+    color:black;
+    background:none;
+    text-transform:uppercase;
+    border:none;
+    border-bottom:1.5px solid black;
+    padding:2.5px;
+
+}
+
+/*featured*/
+#featured h3{/*styling "our featured"heading*/
+    
+    position:relative;
+}
+#featured h4{
+    margin-top: 20px;
+}
+#featured h3::after{
+    content:"";
+    position:absolute;
+    height:3px;/*thickness of line*/
+    width: 50px;/*nothing before hovering*/
+    left:48%;/*thus element after title will land just paralelly with it*/
+    bottom:-10px;
+    background-color: #088178;
+    
+}
+.product{
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+/*to make the image lil dull while hovering*/
+.product img{
+    transition:0.3s all;
+    object-fit: fill;
+    width: 100%;
+    height: 350px;
+}
+.product:hover img{
+    opacity: 0.7;
+}
+/*customize buybtn*/
+/*translate helps element to seem like translating while hovering*/
+.product .buy-btn{
+    margin-top: 5px;
+    background:#088178;
+    transform:translateY(0px);/*initially no translating*/
+    opacity:0;/*since it shd dissapear*/
+    transition:0.3s all;
+    border:none;
+}
+.product:hover .buy-btn{
+    transform:translateY(-8px);/*seem like cmg frm bottom to up about 8 px while hovering*/
+    opacity:1
+    
+}
+#feature .fe-box{
+    width:180px;
+    text-align:center;
+    margin:40px 80px;
+    padding:25px 15px;
+    box-shadow:20px 20px 34px rgba(0, 0, 0, 0.03);
+    border:1px solid black;
+    border-radius:4px;
+    background-color: #FAD4D4;
+}
+#feature .fe-box:hover{
+    box-shadow:10px 10px 54px rgba(70,62,221,0.1);
 }
