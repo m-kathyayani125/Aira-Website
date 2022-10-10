@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        
+        <link rel="stylesheet" href="style.css">
+        <title>Product Details</title>
+        <style>
+            body{
+                background-color: white;
+            }
+            /*to place small images in a row in gallery*/
+            .small-img-group{
+                display:flex;
+                justify-content: space-between;
+
+            }
+            /*to align their heights*/
+            .small-img-col{
+                flex-basis:24%;
+                cursor:pointer;
+            }
+            /*to style "select size" button*/
+            .s-product select{
+                display:block;
+                padding:5px 10px;
+            }
+            /*to style "quantity session"*/
+            .s-product input{
+                width:50px;
+                height:40px;
+                padding-left:10px;
+                font-size:16px;
+                margin-right:10px;
+            }
+            /*to remove outline on quantity session when selected*/
+            .sproduct input:focus{
+                outline:none;
+            }
+            .buy-btn{
+                background-color: #088178;
+                opacity:1;
+                transition:0.3s all;
+                border:none;
+                outline: none;
+            }
+            .buy-btn:hover{
+                background-color: #088178;
+                opacity:0.8;
+            }
+            .product img{/*bringing all images to same height*/
+                transition:0.3s all;
+                object-fit: fill;
+                width: 100%;
+                height: 300px;
+            }
+            .product:hover img{
+                opacity: 0.7;/*to make the image lil dull while hovering*/
+            }
+        </style>
+    </head>
+    
+    <body>
+         <!--navbar-->
+         <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 fixed-top" >
+            <!--navbar-expand-lg:to put the expanded form of navbar in lg and above
+            navbar-light:to set the text in navbar to light
+            bg-light:to set background of navbar to light
+            p-3:for padding
+            fixed-top:to fix navbar on top while scrolling-->
+            <div class="container">
+                <!--navbar-brand:to set as logo-->
+                <a href="#" class="navbar-brand">
+                    <img src="img/logo.png" width="50" height="55" alt="">
+                </a>
+
+                <!--hamburger menu icon-->
+                <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span ><i class="bi bi-list" id="bar"></i></span>
+                </button>
+                
+                <!--navbar list that collapse below lg-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+                    <ul class="navbar-nav ms-auto" >
+                        <li class="nav-item" >
+                            <a class="nav-link  " href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link "  href="shop.html">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link "  href="#">Contact </a>
+                        </li>
+                        <!--search and cart icons-->
+                        <li class="nav-item">
+                            <i class="bi bi-search"></i>
+                            <i class="bi bi-bag"></i>
+                            
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </nav>
+        <!--product description-->
+        <section class="s-product my-5 pt-5 container">
+            <div class="row mt-5">
+                <!--for gallery section-->
+                <div class="col-lg-5 col-md-12 col-12">
+                    <img class="imf-fluid w-100 pb-1" src="img/shop/1.jpg" id="MainImg" alt="">
+                    <div class="small-img-group">
+                        <div class="small-img-col">
+                            <img src="img/shop/1.jpg" width="100%" class="small-img" alt="">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="img/shop/24.jpg" width="100%" class="small-img" alt="">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="img/shop/25.jpg" width="100%" class="small-img" alt="">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="img/shop/26.jpg" width="100%" class="small-img" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!--for description section-->
+                <div class="col-lg-6 col-md-12 col-12" >
+                    <h6>Home/T-shirt</h6>
+                    <h3 class="py-4">Men's Fashion T Shirt</h3>
+                    <h2>$139.00</h2>
+                    <select class="my-3">
+                        <option >Select size</option>
+                        <option >XS</option>
+                        <option >S</option>
+                        <option >M</option>
+                        <option >L</option>
+                        <option >XL</option>
+                        <option >XXL</option>
+                    </select>
+                    <input type="number" value="1">
+                    <button class="buy-btn">Add to Cart</button>
+                    <h4 class="my-5">Product Details</h4>
+                    <span>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, excepturi nesciunt cupiditate nisi amet ipsa, temporibus repellendus consequuntur optio nulla quod. Nam possimus impedit magni illum odio expedita ducimus asperiores.
+
+                    </span>
+                </div>
+
+            </div>
+        </section>
+        <!--related products-->
+        <section class="my-5 pb-5" id="featured">
+            <div class="container text-center mt-5 py-5">
+                <h3 >Related Products</h3>
+                
+            </div>
+            <div class="row mx-auto container-fluid">
+                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img class="img-fluid mb-3" src="img/rp/f1.jpg" alt="">
+                    <div class="star">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <h5 class="p-name">Foral Shirt</h5>
+                    <h4 class="p-price">$92.00</h4>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+                
+                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img class="img-fluid mb-3" src="img/rp/f2.jpg" alt="">
+                    <div class="star">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <h5 class="p-name">Casual Shirt</h5>
+                    <h4 class="p-price">$92.00</h4>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img class="img-fluid mb-3" src="img/rp/f3.jpg" alt="">
+                    <div class="star">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <h5 class="p-name">Foral Shirt</h5>
+                    <h4 class="p-price">$92.00</h4>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+                <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img class="img-fluid mb-3" src="img/rp/f4.jpg" alt="">
+                    <div class="star">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <h5 class="p-name">Foral Shirt</h5>
+                    <h4 class="p-price">$92.00</h4>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+        </section>
+        <!--footer-->
+        <footer class="mb-0">
+            <div class="row container mx-auto pt-5">
+                <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+                    <img src="img/logo-dark.png" alt="">
+                    <p class="pt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos voluptate laborum atque blanditiis iure ad.</p>
+
+                </div>
+                <div class="footer-one col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <h5 class="pb-2">Featured</h5>
+                    <ul class="text-uppercase list-unstyled">
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">Boys</a></li>
+                        <li><a href="#">Girls</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Clothes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-one col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <h5 class="pb-2">Contact Us</h5>
+                    <div >
+                        <h6 class="text-uppercase">Address</h6>
+                        <p>562 Wellington Road, Street 32 SF </p>
+
+                    </div>
+                    <div >
+                        <h6 class="text-uppercase">Phone</h6>
+                        <p>+01-2222-356 / (+91) 9299393212 </p>
+                        
+                    </div>
+                    <div >
+                        <h6 class="text-uppercase">Email</h6>
+                        <p>aira@gmail.com </p>
+                        
+                    </div>
+                </div>                
+                <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+                    <h5 class="pb-2">Instagram</h5>
+                    <div class="row">
+                        <img class="img-fluid w-25 h-100 m-2"src="img/insta/1.jpg" alt="">
+                        <img class="img-fluid w-25 h-100 m-2"src="img/insta/2.jpg" alt="">
+                        <img class="img-fluid w-25 h-100 m-2"src="img/insta/3.jpg" alt="">
+                        <img class="img-fluid w-25 h-100 m-2"src="img/insta/4.jpg" alt="">
+                        <img class="img-fluid w-25 h-100 m-2"src="img/insta/5.jpg" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="copyright ">
+                <div class="row container mx-auto">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                        <img src="img/payment.png" alt="">
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 text-nowrap mb-2">
+                       <p>Aira Ecommerce © 2022,All Rights Reserved.</p> 
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 m">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                     </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <!--to make gallery and shiftinh images on click as functional using js-->
+        <script>
+            var MainImg = document.getElementById('MainImg');
+            var SmallImg = document.getElementsByClassName('small-img');/*taking all small images as array*/
+            SmallImg[0].onclick = function(){/*on clicking on first image execute this function*/
+                MainImg.src=SmallImg[0].src;/*change main image source to small image source*/
+            }
+            SmallImg[1].onclick = function(){/*on clicking on first image execute this function*/
+                MainImg.src=SmallImg[1].src;/*change main image source to small image source*/
+            }
+            SmallImg[2].onclick = function(){/*on clicking on first image execute this function*/
+                MainImg.src=SmallImg[2].src;/*change main image source to small image source*/
+            }
+            SmallImg[3].onclick=function(){/*on clicking on first image execute this function*/
+                MainImg.src=SmallImg[3].src;/*change main image source to small image source*/
+            }
+        </script>
+    </body>
+</html>

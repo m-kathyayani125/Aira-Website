@@ -11,7 +11,9 @@
         <title>Shop</title>
     </head>
     <style>
-        
+        body{
+            background-color: white;
+        }
         .shop-prod img{
             width:100%;
             height:auto;
@@ -43,6 +45,50 @@
         }
         #page-header h5{
             color:white;
+        }
+        #Shop h3{/*styling "our featured"heading*/
+    
+            position:relative;
+        }
+        #Shop h4{
+            margin-top: 20px;
+        }
+        #Shop h3::after{/*adding line btwn h4 and h3*/
+            content:"";
+            position:absolute;
+            height:3px;/*thickness of line*/
+            width: 50px;/*nothing before hovering*/
+            left:0%;/*thus element after title will land just paralelly with it*/
+            bottom:-10px;
+            background-color:#773ed1;
+            
+        }
+        .shop-prod{
+            cursor: pointer;/*making cursor as hand when hovered over products in featured section*/
+            margin-bottom: 2rem;
+        }
+
+        .shop-prod img{/*bringing all images to same height*/
+            transition:0.3s all;
+            object-fit: fill;
+            width: 100%;
+            height:70%;
+        }
+        .shop-prod:hover img{
+            opacity: 0.7;/*to make the image lil dull while hovering*/
+        }
+        /*watches button styling*/
+        .shop-prod .buy-btn{
+            margin-top: 5px;
+            transform:translateY(0px);/*initially no translating*/
+            opacity:0;/*since it shd dissapear*/
+            transition:0.3s all;
+            border:none;
+        }
+        .shop-prod:hover .buy-btn{
+            transform:translateY(-8px);/*seem like cmg frm bottom to up about 8 px while hovering*/
+            opacity:1
+            
         }
     </style>
     <body>
@@ -111,7 +157,7 @@
                 <h4>Check out our new products with fair prices</h4>
             </div>
             <div class="row mx-auto container">
-                <div class="shop-prod text-center col-lg-3 col-md-4 col-sm-12 my-5">
+                <div onclick="window.location.href='sproduct.html';" class="shop-prod text-center col-lg-3 col-md-4 col-sm-12 my-5">
                     <img class="img-fluid mb-3" src="img/shop/1.jpg" alt="">
                     <div class="star">
                         <i class="bi bi-star-fill"></i>
