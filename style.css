@@ -83,9 +83,12 @@ button:hover{
 }
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar i:hover,
-.navbar-light .navbar-nav .nav-link.active
-.navbar i.active{
+.navbar-light .navbar-nav .nav-link:active
+.navbar:active i{
     color:#ff3c78;
+}
+.navbar-light .navbar-nav .nav-link> ul > li:nth-child(1){
+    color:#ff3c78
 }
 /*styling search and cart icons on navbar*/ 
 .navbar i{
@@ -370,6 +373,20 @@ a.nav-link:hover::after/*order of hover and after is important syntactically*/
     background-color:#ff3c78;
     
 }
+.product1{
+    cursor: pointer;/*making cursor as hand when hovered over products in featured section*/
+    margin-bottom: 2rem;
+}
+
+.product1 img{/*bringing all images to same height*/
+    transition:0.3s all;
+    object-fit: fill;
+    width: 100%;
+    height: 350px;
+}
+.product1:hover img{
+    opacity: 0.7;/*to make the image lil dull while hovering*/
+}
 /*female clothes button styling*/
 .product1 .buy-btn{
     margin-top: 5px;
@@ -404,7 +421,22 @@ a.nav-link:hover::after/*order of hover and after is important syntactically*/
     background-color:#083AA9;
     
 }
+.m-product{
+    cursor: pointer;/*making cursor as hand when hovered over products in featured section*/
+    margin-bottom: 2rem;
+}
+
+.m-product img{/*bringing all images to same height*/
+    transition:0.3s all;
+    object-fit: fill;
+    width: 100%;
+    height: 70%;
+}
+.m-product:hover img{
+    opacity: 0.7;/*to make the image lil dull while hovering*/
+}
 /*male clothes button styling*/
+
 .m-product .buy-btn{
     margin-top: 5px;
     background:#083AA9;
@@ -436,6 +468,20 @@ a.nav-link:hover::after/*order of hover and after is important syntactically*/
     bottom:-10px;
     background-color:#42032C;
     
+}
+.w-product{
+    cursor: pointer;/*making cursor as hand when hovered over products in featured section*/
+    margin-bottom: 2rem;
+}
+
+.w-product img{/*bringing all images to same height*/
+    transition:0.3s all;
+    object-fit: fill;
+    width: 100%;
+    
+}
+.w-product:hover img{
+    opacity: 0.7;/*to make the image lil dull while hovering*/
 }
 /*watches button styling*/
 .w-product .buy-btn{
@@ -552,6 +598,50 @@ footer .copyright a{
 footer .copyright a:hover{
     color:#fff;
     background-color: #9264db;
+}
+#Shop h3{/*styling "our featured"heading*/
+    
+    position:relative;
+}
+#Shop h4{
+    margin-top: 20px;
+}
+#Shop h3::after{/*adding line btwn h4 and h3*/
+    content:"";
+    position:absolute;
+    height:3px;/*thickness of line*/
+    width: 50px;/*nothing before hovering*/
+    left:0%;/*thus element after title will land just paralelly with it*/
+    bottom:-10px;
+    background-color:#850E35;
+    
+}
+.shop-prod{
+    cursor: pointer;/*making cursor as hand when hovered over products in featured section*/
+    margin-bottom: 2rem;
+}
+
+.shop-prod img{/*bringing all images to same height*/
+    transition:0.3s all;
+    object-fit: fill;
+    width: 100%;
+    height:70%;
+}
+.shop-prod:hover img{
+    opacity: 0.7;/*to make the image lil dull while hovering*/
+}
+/*watches button styling*/
+.shop-prod .buy-btn{
+    margin-top: 5px;
+    transform:translateY(0px);/*initially no translating*/
+    opacity:0;/*since it shd dissapear*/
+    transition:0.3s all;
+    border:none;
+}
+.shop-prod:hover .buy-btn{
+    transform:translateY(-8px);/*seem like cmg frm bottom to up about 8 px while hovering*/
+    opacity:1
+    
 }
 #feature .fe-box{
     width:180px;
