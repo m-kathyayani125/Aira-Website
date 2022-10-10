@@ -14,24 +14,35 @@
         body{
             background-color: white;
         }
-        .shop-prod img{
-            width:100%;
-            height:auto;
-            box-sizing:border-box;
-            object-fit:cover
+        /*pagination styling*/
+        body > nav:nth-child(5) > div > ul > li.page-item.active>a{
+            background-color: black;/*making highlighted 1 box as bg black*/
         }
-        body > nav:nth-child(4) > div > ul > li.page-item.active>a{
-            background-color: black;
+        body > nav:nth-child(5) > div > ul > li:nth-child(n)>a{
+            color:black;/*making text in boxes as coolor black*/
         }
-        body > nav:nth-child(4) > div > ul > li:nth-child(n)>a{
-            color:black;
+        body > nav:nth-child(5) > div > ul > li:nth-child(n):hover>a{
+            background-color:#FFB200 ;
+            color:white;/*change to violet pn hovering*/
         }
-        body > nav:nth-child(4) > div > ul > li:nth-child(n):hover>a{
-            background-color: blueviolet;
-            color:white;
+        /*heading styling*/
+        #blog-home h1{/*styling "our featured"heading*/
+            font-weight:600;
+            position:relative;
+        }
+        
+        #blog-home h1::after{/*adding line btwn h4 and h3*/
+            content:"";
+            position:absolute;
+            height:3px;/*thickness of line*/
+            width: 50px;/*nothing before hovering*/
+            left:0%;/*thus element after title will land just paralelly with it*/
+            bottom:-10px;
+            background-color:#FFB200;
+            
         }
         #page-header{
-            background-image: url("img/banner/b1.jpg");
+            background-image: url("img/banner/b19.jpg");
             width:100%;
             height: 50vh;
             background-size:cover;/*to cover the pics and stretch to fill the container*/
@@ -46,49 +57,97 @@
         #page-header h5{
             color:white;
         }
-        #Shop h3{/*styling "our featured"heading*/
-    
-            position:relative;
-        }
-        #Shop h4{
-            margin-top: 20px;
-        }
-        #Shop h3::after{/*adding line btwn h4 and h3*/
-            content:"";
-            position:absolute;
-            height:3px;/*thickness of line*/
-            width: 50px;/*nothing before hovering*/
-            left:0%;/*thus element after title will land just paralelly with it*/
-            bottom:-10px;
-            background-color:#773ed1;
-            
-        }
-        .shop-prod{
-            cursor: pointer;/*making cursor as hand when hovered over products in featured section*/
-            margin-bottom: 2rem;
+        #page-header h1{
+            color:white;
+            font-weight: 600;
         }
 
-        .shop-prod img{/*bringing all images to same height*/
-            transition:0.3s all;
-            object-fit: fill;
-            width: 100%;
-            height:70%;
+        #blog-container .post .post-img{
+            overflow:hidden;/*to control the rotate and hovering effect to happen wiithin in boundary frame*/
+            cursor:pointer;
+            box-shadow:  5px 10px 15px rgba(0,0,0,0.06);
         }
-        .shop-prod:hover img{
-            opacity: 0.7;/*to make the image lil dull while hovering*/
+        /*to define speed of transition while hovering of image*/
+        #blog-container .post img{
+            transition:0.3s ease;
         }
-        /*watches button styling*/
-        .shop-prod .buy-btn{
-            margin-top: 5px;
-            transform:translateY(0px);/*initially no translating*/
-            opacity:0;/*since it shd dissapear*/
-            transition:0.3s all;
-            border:none;
+        /*to decrese brightness and seem it like rotating while hovering*/
+        #blog-container .post:hover img{
+            transform:scale(1.3) rotate(-10deg);
+            opacity:0.8;
+
         }
-        .shop-prod:hover .buy-btn{
-            transform:translateY(-8px);/*seem like cmg frm bottom to up about 8 px while hovering*/
-            opacity:1
+        /*to define speed of transition while hovering of text*/
+        #blog-container .post h3{
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+        /*to change color of text while hovering*/
+        #blog-container .post:hover h3{
+            color: #fd8c66;
+        }
+        /*same effect for text below bottom three blogs*/
+         /*to define speed of transition while hovering of text*/
+         #blog-container .post h4{
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+        /*to change color of text while hovering*/
+        #blog-container .post:hover h4{
+            color: #fd8c66;
+        }
+        /*styling CONTINUE READING*/
+        #blog-container .post a{
+            text-decoration:none;
+            font-size: 14px;
+            color:black;
+            font-weight: 700;
+            position :relative;
+            padding: 10 0px;
+            margin:20 0px;
+            transition:0.3s ease;
+        }
+        /*drawing line after CONTINUE READING*/
+        #blog-container .post a::after{
+            content:"";
+            width:50px;
+            height:1.5px;
+            background-color: black;
+            position:absolute;
+            top:7px;
+            right:-55px;
             
+        }
+        /*hovering effect of line*/
+        #blog-container .post a:hover:after{
+            
+            background-color:#FFB200;
+            
+        }
+        /*hovering effect of CONTINUE READING*/
+        #blog-container .post a:hover{
+            color:#FFB200;
+        }
+        /*paragraph styling under blog*/
+        #blog-container .post p{
+            font-size: 11px;
+            margin-bottom: 5px;
+        }
+        /*date styling*/
+        #blog-container .post{
+            position:relative;
+        }
+        #blog-container .post h1{
+            position:absolute;
+            top:-55px;
+            left:0;
+            font-size: 70px;
+            font-weight: 550;
+            color:#f4b29c;
+            z-index:-9;/*negetive value if have to place behind or underneath of another element*/
+        }
+        .newsletter{
+            background-image: url("img/ybg.png");
         }
     </style>
     <body>
@@ -118,7 +177,7 @@
                             <a class="nav-link  " href="index.html">Home</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link "  href="#">Shop</a>
+                            <a class="nav-link "  href="shop.html">Shop</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="#">Blog</a>
@@ -127,7 +186,7 @@
                             <a class="nav-link " href="#">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link "  href="#">Contact </a>
+                            <a class="nav-link "  href="#footer">Contact </a>
                         </li>
                         <!--search and cart icons-->
                         <li class="nav-item">
@@ -144,12 +203,90 @@
         <section id="page-header">
             <div class="container m-10">
                 
-                <h1>#Happy Shopping!</h1>
-                <h5>Save more with coupons & up to 70% off!</h5>
+                <h1>#Readmore!</h1>
+                <h5>Read all case studies about our products!</h5>
                 
             </div>
         </section>
-        
+        <!--heading-->
+        <section id="blog-home" class="container pt-5 mt-5">
+            <h1 class="font-weight-bold">Blogs</h1>
+        </section>
+        <!--content-->
+        <section id="blog-container" class="container pt-5">
+            <div class="row">
+                <div class="post col-lg-6 col-md-6 col-12 pb-5">
+                    <div class="post-img">
+                        <img class="img-fluid w-100" src="img/blog/1.jpg" alt="">
+                    </div>
+                    <div>
+                        <h3 class="font-weight-normal pt-3">The best ways to change your summer wardrobe into autumn wardrobe.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta esse necessitatibus maiores facere facilis minus culpa? Et laborum placeat doloribus aliquam consequuntur saepe voluptas, obcaecati corporis expedita aut error earum?</p>
+                        <a href="#">CONTINUE READING</a>
+                    </div>
+                    <h1 >06/03</h1>
+                </div>
+                <div class="post col-lg-6 col-md-6 col-12 pb-5">
+                    <div class="post-img">
+                        <img class="img-fluid w-100" src="img/blog/2.jpg" alt="">
+                    </div>
+                    <div>
+                        <h3 class="font-weight-normal pt-3">Men's fashion in leather.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta esse necessitatibus maiores facere facilis minus culpa? Et laborum placeat doloribus aliquam consequuntur saepe voluptas, obcaecati corporis expedita aut error earum?</p>
+                        <a href="#">CONTINUE READING</a>
+                    </div>
+                    <h1>25/11</h1>
+                </div>
+                <div class="post col-lg-6 col-md-6 col-12 pb-5">
+                    <div class="post-img">
+                        <img class="img-fluid w-100" src="img/blog/3.jpg" alt="">
+                    </div>
+                    <div>
+                        <h3 class="font-weight-normal pt-3">DIYer and TV host Trisha Hershberger's journey through gaming keeps evolving.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta esse necessitatibus maiores facere facilis minus culpa? Et laborum placeat doloribus aliquam consequuntur saepe voluptas, obcaecati corporis expedita aut error earum?</p>
+                        <a href="#">CONTINUE READING</a>
+                    </div>
+                    <h1>21/06</h1>
+                </div>
+                <div class="post col-lg-6 col-md-6 col-12 pb-5">
+                    <div class="post-img">
+                        <img class="img-fluid w-100" src="img/blog/4.jpg" alt="">
+                    </div>
+                    <div>
+                        <h3 class="font-weight-normal pt-3">The best ways to change your summer wardrobe into autumn wardrobe.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta esse necessitatibus maiores facere facilis minus culpa? Et laborum placeat doloribus aliquam consequuntur saepe voluptas, obcaecati corporis expedita aut error earum?</p>
+                        <a href="#">CONTINUE READING</a>
+                    </div>
+                    <h1>26/11</h1>
+                </div>
+                <!--banner-->
+                <div class="col-lg-12 col-md-12 col-12 pb-5">
+                    <div class="post-img">
+                        <img class="img-fluid w-100" src="img/blog/banner.webp" alt="">
+                    </div>
+                    
+                </div>
+                <!--three blogs at bottom-->
+                <div class="post col-lg-4 col-md-6 col-12 pb-5">
+                    <div class="post-img">
+                        <img class="img-fluid w-100" src="img/blog/1.webp" alt="">
+                    </div>
+                    <h4 class="font-weight-normal pt-3">The best ways to change your summer wardrobe.</h4>
+                </div>
+                <div class="post col-lg-4 col-md-6 col-12 pb-5">
+                    <div class="post-img">
+                        <img class="img-fluid w-100" src="img/blog/2.webp" alt="">
+                    </div>
+                    <h4 class="font-weight-normal pt-3">Lenovo's smarter devices stoke professional passions</h4>
+                </div>
+                <div class="post col-lg-4 col-md-6 col-12 pb-5">
+                    <div class="post-img">
+                        <img class="img-fluid w-100" src="img/blog/3.webp" alt="">
+                    </div>
+                    <h4 class="font-weight-normal pt-3">Take a 3D tour through a Microsoft datacenter</h4>
+                </div>
+            </div>
+        </section>
         <!--pagination-->
         <nav aria-label="Page navigation example">
             <div class="">
@@ -184,7 +321,7 @@
             </form>
         </div>
         <!--footer-->
-        <footer class="mb-0">
+        <footer class="mb-0" id="footer">
             <div class="row container mx-auto pt-5">
                 <div class="footer-one col-lg-3 col-md-6 col-sm-12">
                     <img src="img/logo-dark.png" alt="">
