@@ -521,8 +521,9 @@ a.nav-link:hover::after/*order of hover and after is important syntactically*/
     background:#2f3542;
     color:white;
     width:40px;
+    /*padding-top:10px;*/
     line-height:40px;
-    border-radius: 4px;;
+    border-radius: 4px;
 }
 .tbox,
 .btn{
@@ -550,7 +551,7 @@ a.nav-link:hover::after/*order of hover and after is important syntactically*/
 footer{
     background-color: #222;
     /*dark bg*/
-    margin-bottom:0;
+    margin-bottom:15px;
     padding-bottom: 0;
 }
 footer h5{
@@ -581,6 +582,7 @@ body > footer > div.copyright > div > div.col-lg-4.col-md-6.col-sm-12.m{
     padding-left:80px;
     margin-right:5px;
     margin-top: 0px;
+    padding-bottom: 15px;
 }
 
 footer .copyright a{
@@ -590,10 +592,12 @@ footer .copyright a{
     background-color:#fff;
     display:inline-block;
     text-align:center;
+    justify-content: center;
+    align-items: center;
     line-height: 38px;
     border-radius: 50%;
     transition:0.3s ease;
-    margin: 5px;
+    margin:5px;
 }
 footer .copyright a:hover{
     color:#fff;
